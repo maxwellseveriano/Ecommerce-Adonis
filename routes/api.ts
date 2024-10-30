@@ -1,5 +1,6 @@
 import Case from '#models/case'
 import Skin from '#models/skin'
+import Sticker from '#models/sticker'
 import router from '@adonisjs/core/services/router'
 
 const lang = 'pt-BR'
@@ -70,9 +71,34 @@ router.get('/api/cases', async () => {
 
 router.get('/api/stickers', async () => {
   const apiResponse = await fetch(`${baseUrl}/stickers.json`)
-  const apiData = (await apiResponse.json()) as Array<Object>
+  const apiData = (await apiResponse.json()) as Array<any>
 
   if (!apiPrices) await getApiPrices()
+
+  for (let i = 0; i < apiData.length; i += 50) {
+    if (apiData[i].market_hash_name) {
+      let newSticker = {} as Sticker
+      const apiCase = apiData[i]
+
+      newSticker.name = apiCase.name
+      newSticker.description = apiCase.description || ''
+      newSticker.marketHashName = apiCase.market_hash_name
+      newSticker.imagePath = apiCase.image
+      newSticker.type = apiCase.type
+      newSticker.effect = apiCase.effect
+
+      for (const casePrice of apiPrices) {
+        if (casePrice.market_hash_name === apiCase.market_hash_name) {
+          newSticker.price = casePrice.suggested_price
+          newSticker.quantity = casePrice.quantity
+          break
+        }
+      }
+      await Sticker.create(newSticker)
+    }
+  }
+
+  return { message: 'Sucess' }
 
   return apiData.slice(0, 10)
 })
