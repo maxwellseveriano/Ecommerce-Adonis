@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      STICKERS
+    </title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=instrument-sans:400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+  <body>
+    <div class = "p-2 grid grid-cols-4 gap-5">
+        @each(sticker in stickers)
+    <div class = "border-4 border-green-300">
+    <div class = "border-4 justify-center">
+    <img src = '{{sticker.imagePath}}' class = "h-28">
+    </div> 
+            <div>
+                <p>{{sticker.name}}</p>
+                <p>{{sticker.price}}</p>
+            </div>
+          </div>
+        @end
+    </div>
+  </body>
+</html>
