@@ -16,18 +16,22 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
-    <div class = "p-2 grid grid-cols-4 gap-5">
-        //@each(case in cases)
-    <div class = "border-4 border-green-300">
-    <div class = "border-4 justify-center">
-    <img src = '{{case.imagePath}}' class = "h-28">
-    </div> 
-            <div>
-                <p>{{case.name}}</p>
-                <p>{{case.price}}</p>
-            </div>
+    <div class="p-2 grid grid-cols-4 gap-5">
+      @each(casei in cases)
+        <div class="border-4 border-green-300">
+          <div c lass="border-4 justify-center">
+            <img src="{{ casei.imagePath }}" class="h-28" />
           </div>
-        @end
+          <div>
+            <p>
+              {{ casei.name }}
+            </p>
+            <p>
+              {{ casei.price }}
+            </p>
+          </div>
+        </div>
+      @end
     </div>
   </body>
 </html>
