@@ -16,18 +16,22 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
-    <div class = "p-2 grid grid-cols-4 gap-5">
-        @each(sticker in stickers)
-    <div class = "border-4 border-green-300">
-    <div class = "border-4 justify-center">
-    <img src = '{{sticker.imagePath}}' class = "h-28">
-    </div> 
-            <div>
-                <p>{{sticker.name}}</p>
-                <p>{{sticker.price}}</p>
-            </div>
+    <div class="p-2 grid grid-cols-4 gap-5">
+      @each(sticker in stickers)
+        <div class="border-4 border-green-300">
+          <div class="border-4 justify-center">
+            <img src="{{ sticker.imagePath }}" class="h-28" />
           </div>
-        @end
+          <div>
+            <p>
+              {{ sticker.name }}
+            </p>
+            <p>
+              {{ sticker.price }}
+            </p>
+          </div>
+        </div>
+      @end
     </div>
   </body>
 </html>
