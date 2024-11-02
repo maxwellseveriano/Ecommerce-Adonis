@@ -24,16 +24,14 @@
           </div>
           <div class="text-white text-sm text-center p-2">
             <p class="font-bold">
-              R$  {{ skin.price.toFixed(2) }}
+              R$  {{ skin.price?.toFixed(2) || '79.99' }}
             </p>
             <p class="font-thin">
               {{ skin.name }}
             </p>
           </div>
           <div class=" text-center">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-8 rounded justify-self-end">
-              Carrinho
-          </button>
+            @include('components/button')
           </div>
         </div>
       @end

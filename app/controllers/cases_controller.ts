@@ -4,7 +4,7 @@ import Case from '#models/case'
 
 export default class CasesController {
   async index({ view }: HttpContext) {
-    const cases = await Case.all()
-    return view.render('pages/cases', { cases })
+    const skins = await Case.all()
+    return view.render('pages/skins', { skins })
   }
 }
