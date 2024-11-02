@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Chicken Skins
+    </title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=instrument-sans:400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+  <body class="text-3xl font-mono bg-slate-800">
+    <section class="font-bold font-mono px-36 text-gray-200 flex justify-around translate-y-1/2 text-center">
+      <a href="{{ route('skins.index') }}">
+        <div class="border-2 border-gray-800 shadow-xl h-72 rounded-md bg-gray-700 hover:bg-gray-600">
+          <img src="{{ skin.imagePath }}" class="h-48" />
+          <span class="">
+            SKINS
+          </span>
+        </div>
+      </a>
+      <a href="{{ route('cases.index') }}">
+        <div class="border-2 border-gray-800 shadow-xl h-72 rounded-md bg-gray-700 hover:bg-gray-600">
+          <img src="{{ casei.imagePath }}" class="h-48" />
+          <span class="">
+            CAIXAS
+        </span>
+        </div>
+      </a>
+      <a href="{{ route('stickers.index') }}">
+        <div class="border-2 border-gray-800 shadow-xl h-72 rounded-md bg-gray-700 hover:bg-gray-600">
+          <img src="{{ sticker.imagePath }}" class="h-48" />
+          <span class="">
+            ADESIVOS
+          </span>
+        </div>
+      </a>
+    </section>
+  </body>
+</html>

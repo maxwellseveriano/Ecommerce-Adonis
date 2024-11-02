@@ -4,7 +4,7 @@ import Sticker from '#models/sticker'
 
 export default class StickersController {
   async index({ view }: HttpContext) {
-    const stickers = await Sticker.all()
-    return view.render('pages/stickers', { stickers })
+    const skins = await Sticker.all()
+    return view.render('pages/skins', { skins })
   }
 }
