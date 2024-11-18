@@ -13,6 +13,8 @@ const sticker = await Sticker.first()
 
 router.on('/').render('pages/home/show', { skin, casei, sticker }).as('home.show')
 
+router.on('/login').render('pages/auth/create').as('auth.create')
+
 router.get('/skins', [SkinsController, 'index']).as('skins.index')
 
 router.get('/cases', [CasesController, 'index']).as('cases.index')
