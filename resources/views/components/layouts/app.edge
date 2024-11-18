@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Chicken Skins
+    </title>
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+
+  </head>
+  <body class="h-screen">
+    <section class="h-full flex flex-col antialiased bg-primary-color">
+      @include('components/layouts/partials/header')
+
+      <div class="flex-grow">
+        {{{ await $slots.main() }}}
+      </div>
+    </section>
+  </body>
+</html>
