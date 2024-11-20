@@ -11,7 +11,7 @@ export default class UsersController {
     return view.render('pages/users/create_user')
   }
   async store({ request, response }: HttpContext) {
-    const payload = await request.validateUsing(createUserValidator)
+    const payload = await request.only(['name', 'email', 'password'])
     const user = new User()
     user.merge(payload)
     await user.save()
