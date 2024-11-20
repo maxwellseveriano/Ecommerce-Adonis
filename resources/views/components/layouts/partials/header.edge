@@ -11,6 +11,9 @@
     <a href="{{ route('stickers.index') }}">Adesivos</a>
   </div>
   <div class="text-white">
+    @if(auth.isAuthenticated)
+    {{auth.user.name}} 
     @!component('components/button', { href: 'auth.create', info: 'Login' })
+    @endif
   </div>
 </nav>
