@@ -40,6 +40,11 @@
           >
             Entrar
         </button>
+        @flashMessage('errors.login')
+        <p class="text-sm text-red-500">
+          {{ $message }}
+        </p>
+        @end
         </div>
       </form>
 

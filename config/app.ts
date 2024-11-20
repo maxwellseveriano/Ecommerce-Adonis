@@ -3,6 +3,10 @@ import app from '@adonisjs/core/services/app'
 import { Secret } from '@adonisjs/core/helpers'
 import { defineConfig } from '@adonisjs/core/http'
 
+//Auth:
+const providers = [
+  '@adonisjs/auth/providers/AuthProvider'
+]
 /**
  * The app key is used for encrypting cookies, generating signed URLs,
  * and by the "encryption" module.
