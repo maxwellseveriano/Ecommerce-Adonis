@@ -1,0 +1,11 @@
+@layouts.app()
+  <div class="bg-primary-color">
+    <div class="p-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5">
+      @each(skin in skins)
+        <a href="{{ route('skins.show', {id: skin.id}) }}">
+          @!component('components/card', { product: skin })
+        </a>
+      @end
+    </div>
+  </div>
+@end
