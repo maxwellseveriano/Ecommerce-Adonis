@@ -20,7 +20,7 @@ router.get('/login', [AuthController, 'create']).as('auth.create')
 
 router.post('/login', [AuthController, 'store']).as('auth.store')
 
-router.get('/skins', [SkinsController, 'index']).as('skins.index')
+router.get('/skins', [SkinsController, 'index']).use(middleware.auth()).as('skins.index')
 
 router.get('/cases', [CasesController, 'index']).as('cases.index')
 

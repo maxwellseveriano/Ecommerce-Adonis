@@ -36,7 +36,7 @@
         <div class="w-full text-center text-xl">
           <button
             type="submit"
-            class="bg-gray-700 text-gray-100 py-2 rounded-lg font-semibold transition duration-200"
+            class="bg-h-card-color w-full text-gray-100 py-2 rounded-lg font-semibold transition duration-200 hover:bg-text-color hover:text-nav-color"
           >
             Entrar
         </button>
@@ -51,7 +51,7 @@
       <!-- Link para Registro -->
       <p class="text-sm text-center mt-4 text-gray-300">
         Não tem uma conta?
-        <a href="{{ route('home.show') }}" class="text-gray-4 hover:text-h-card-color underline">Registre-se</a>
+        <a href="{{ route('users.create') }}" class="text-gray-4 hover:text-h-card-color underline">Registre-se</a>
       </p>
       <!-- ******TODO*******
       <p class="text-sm text-center mt-4 text-gray-300">
