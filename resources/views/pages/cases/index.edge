@@ -1,8 +1,10 @@
 @layouts.app()
   <div class="bg-primary-color">
     <div class="p-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5">
-      @each(skin in skins)
-        @!component('components/card', { skin })
+      @each(casei in cases)
+        <a href="{{ route('cases.show', { id: casei.id }) }}">
+          @!component('components/card', { product: casei })
+        </a>
       @end
     </div>
   </div>

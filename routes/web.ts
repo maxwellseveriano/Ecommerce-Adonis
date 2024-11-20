@@ -2,7 +2,7 @@ import Case from '#models/case'
 import Skin from '#models/skin'
 import Sticker from '#models/sticker'
 import router from '@adonisjs/core/services/router'
-import { middleware } from '../start/kernel.js';
+import { middleware } from '../start/kernel.js'
 
 const CasesController = () => import('#controllers/cases_controller')
 const SkinsController = () => import('#controllers/skins_controller')
@@ -21,12 +21,15 @@ router.get('/login', [AuthController, 'create']).as('auth.create')
 router.post('/login', [AuthController, 'store']).as('auth.store')
 
 router.get('/skins', [SkinsController, 'index']).use(middleware.auth()).as('skins.index')
+router.get('/skins/:id', [SkinsController, 'show']).as('skins.show')
 
 router.get('/cases', [CasesController, 'index']).as('cases.index')
+router.get('/cases/:id', [CasesController, 'show']).as('cases.show')
 
 router.get('/stickers', [StickersController, 'index']).as('stickers.index')
+router.get('/stickers/:id', [StickersController, 'show']).as('stickers.show')
 
-router.post('/register', 'AuthController.register');
+//router.post('/register', [AuthController, 'register']);
 
 router.get('/logout', [AuthController, 'destroy']).use(middleware.auth()).as('auth.destroy')
 
