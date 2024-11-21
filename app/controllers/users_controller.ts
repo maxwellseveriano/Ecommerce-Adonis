@@ -11,12 +11,20 @@ export default class UsersController {
     return view.render('pages/users/create_user')
   }
 
-  async store({ request, response }: HttpContext) {
+  async store({ request, response, session }: HttpContext) {
+
+    try{
     const payload = await request.validateUsing(createUserValidator)
     const user = new User()
     user.merge(payload)
     await user.save()
-    return response.redirect().toRoute('auth.create')
+  } catch (error){
+    console.log(error)
+    session.flashOnly(['email'])
+    session.flash({ errors: { login : 'email ja utilizado'}})
+    return response.redirect().back()
+    }
+  return response.redirect().toRoute('auth.create')
   }
 
   edit({ view }: HttpContext) {
@@ -29,7 +37,7 @@ export default class UsersController {
     const authUser = auth.user
 
     if (authUser && user.id === authUser.id) {
-      user.fullName = payload.full_name
+      user.username = payload.username
       user.email = payload.email
       user.password = payload.password
       await user.save()

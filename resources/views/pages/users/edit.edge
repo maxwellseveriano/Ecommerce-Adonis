@@ -12,11 +12,11 @@
       <form action="{{ route('users.update', {id: auth.user.id}) }}" method="POST" class="p-6 space-y-4">
         <!-- Campo de Nome de Usuário -->
         <div>
-          <label for="full_name" class="block text-sm font-medium text-primary-text-color mb-1">Nome de Usuário</label>
+          <label for="username" class="block text-sm font-medium text-primary-text-color mb-1">Nome de Usuário</label>
           <input
             type="text"
             id="username"
-            name="full_name"
+            name="username"
             placeholder="Insira seu nome de usuário"
             required
             class="w-full px-4 py-2 border border-card-border-color rounded bg-nav-color text-primary-text-color placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-h-card-color"
