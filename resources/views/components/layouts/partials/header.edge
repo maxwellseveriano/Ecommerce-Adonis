@@ -14,9 +14,11 @@
     @if(!auth.isAuthenticated)
       @!component('components/button', { href: 'auth.create', info: 'Login', classe: 'w-24' })
     @else
-      <p class="mr-2 truncate max-w-24">
-        {{ auth.user.fullName }}
-      </p>
+      <a href="{{ route('users.index') }}">
+        <p class="mr-2 truncate max-w-24">
+          {{ auth.user.fullName }}
+        </p>
+      </a>
       @!component('components/button', { href: 'auth.destroy', info: 'Logout', classe: 'w-24' })
     @endif
   </div>

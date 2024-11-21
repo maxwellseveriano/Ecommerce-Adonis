@@ -1,0 +1,69 @@
+@layouts.app()
+  <div class="flex items-center justify-center h-full px-4 sm:px-0">
+    <div class="bg-card-color border border-card-border-color rounded-lg shadow-lg w-full max-w-md">
+      <!-- Cabeçalho do formulário -->
+      <div class="text-primary-text-color rounded-t-lg text-center py-4">
+        <h2 class="text-xl font-bold">
+          Alterar Conta
+        </h2>
+      </div>
+
+      <!-- Corpo do formulário -->
+      <form action="{{ route('users.update', {id: auth.user.id}) }}" method="POST" class="p-6 space-y-4">
+        <!-- Campo de Nome de Usuário -->
+        <div>
+          <label for="full_name" class="block text-sm font-medium text-primary-text-color mb-1">Nome de Usuário</label>
+          <input
+            type="text"
+            id="username"
+            name="full_name"
+            placeholder="Insira seu nome de usuário"
+            required
+            class="w-full px-4 py-2 border border-card-border-color rounded bg-nav-color text-primary-text-color placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-h-card-color"
+          />
+        </div>
+
+        <!-- Campo de Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-primary-text-color mb-1">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Insira seu e-mail"
+            required
+            class="w-full px-4 py-2 border border-card-border-color rounded bg-nav-color text-primary-text-color placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-h-card-color"
+          />
+        </div>
+
+        <!-- Campo de Senha -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-primary-text-color mb-1">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Insira sua senha"
+            required
+            class="w-full px-4 py-2 border border-card-border-color rounded bg-nav-color text-primary-text-color placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-h-card-color"
+          />
+        </div>
+
+        <!-- Botão de Registro -->
+        <button
+          type="submit"
+          class="w-full py-2 bg-h-card-color text-primary-text-color rounded hover:bg-pritext-primary-text-color hover:text-nav-color transition-colors font-semibold"
+        >
+          Atualizar
+        </button>
+      </form>
+
+      <!-- Rodapé do formulário -->
+      <div class="text-center text-sm text-primary-text-color rounded-b-lg py-3">
+        <p>
+          Já tem uma conta? <a href="/login" class="underline hover:text-primary-text-color/80">Entre aqui</a>
+        </p>
+      </div>
+    </div>
+  </div>
+@end

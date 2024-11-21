@@ -32,6 +32,18 @@ router.get('/stickers/:id', [StickersController, 'show']).use(middleware.auth())
 
 router.get('/logout', [AuthController, 'destroy']).use(middleware.auth()).as('auth.destroy')
 
-router.get('/user', [UsersController, 'create']).as('users.create')
-
-router.post('/user', [UsersController, 'store']).as('users.store')
+router
+  .group(() => {
+    router.get('/user', [UsersController, 'create']).as('create')
+    router.post('/', [UsersController, 'store']).as('store')
+    router
+      .group(() => {
+        router.get('profile', [UsersController, 'index']).as('index')
+        router.get('update', [UsersController, 'edit']).as('edit')
+        router.post('update/:id', [UsersController, 'update']).as('update')
+        router.post('delete/:id', [UsersController, 'destroy']).as('destroy')
+      })
+      .use(middleware.auth())
+  })
+  .prefix('/user')
+  .as('users')
