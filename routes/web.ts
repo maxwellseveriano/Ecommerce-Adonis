@@ -17,22 +17,33 @@ const sticker = await Sticker.first()
 router.on('/').render('pages/home/show', { skin, casei, sticker }).as('home.show')
 
 router.get('/login', [AuthController, 'create']).as('auth.create')
-
 router.post('/login', [AuthController, 'store']).as('auth.store')
 
 router.get('/skins', [SkinsController, 'index']).use(middleware.auth()).as('skins.index')
-router.get('/skins/:id', [SkinsController, 'show']).as('skins.show')
+router.get('/skins/:id', [SkinsController, 'show']).use(middleware.auth()).as('skins.show')
 
-router.get('/cases', [CasesController, 'index']).as('cases.index')
-router.get('/cases/:id', [CasesController, 'show']).as('cases.show')
+router.get('/cases', [CasesController, 'index']).use(middleware.auth()).as('cases.index')
+router.get('/cases/:id', [CasesController, 'show']).use(middleware.auth()).as('cases.show')
 
-router.get('/stickers', [StickersController, 'index']).as('stickers.index')
-router.get('/stickers/:id', [StickersController, 'show']).as('stickers.show')
+router.get('/stickers', [StickersController, 'index']).use(middleware.auth()).as('stickers.index')
+router.get('/stickers/:id', [StickersController, 'show']).use(middleware.auth()).as('stickers.show')
 
 //router.post('/register', [AuthController, 'register']);
 
 router.get('/logout', [AuthController, 'destroy']).use(middleware.auth()).as('auth.destroy')
 
-router.get('/user', [UsersController, 'create']).as('users.create')
-
-router.post('/user', [UsersController, 'store']).as('users.store')
+router
+  .group(() => {
+    router.get('/user', [UsersController, 'create']).as('create')
+    router.post('/', [UsersController, 'store']).as('store')
+    router
+      .group(() => {
+        router.get('profile', [UsersController, 'index']).as('index')
+        router.get('update', [UsersController, 'edit']).as('edit')
+        router.post('update/:id', [UsersController, 'update']).as('update')
+        router.post('delete/:id', [UsersController, 'destroy']).as('destroy')
+      })
+      .use(middleware.auth())
+  })
+  .prefix('/user')
+  .as('users')

@@ -1,0 +1,54 @@
+@layouts.app()
+  <div class="h-full bg-primary-color flex items-center justify-center p-6">
+    <!-- Card principal -->
+    <div class="bg-card-color border border-card-border-color rounded-lg shadow-lg p-6 w-full max-w-md">
+      <!-- Cabeçalho do Card -->
+      <div class="bg-h-card-color rounded-t-lg p-4 text-center">
+        <h2 class="text-xl font-semibold text-primary-text-color">
+          Informações do Usuário
+        </h2>
+      </div>
+
+      <!-- Corpo do Card -->
+      <div class="mt-4 space-y-4">
+        <!-- Nome -->
+        <div class="flex justify-between items-center">
+          <span class="text-primary-text-color">Nome:</span>
+          <span class="text-primary-text-color font-medium">{{ auth.user.fullName }}</span>
+        </div>
+
+        <!-- E-mail -->
+        <div class="flex justify-between items-center">
+          <span class="text-primary-text-color">E-mail:</span>
+          <span class="text-primary-text-color font-medium">{{ auth.user.email }}
+          </span>
+        </div>
+
+        <!-- Senha (oculta) -->
+        <div class="flex justify-between items-center">
+          <span class="text-primary-text-color">Senha:</span>
+          <span class="text-primary-text-color font-medium">********</span>
+        </div>
+      </div>
+
+      <!-- Botão Alterar Usuário -->
+      <div class="mt-6 text-center flex justify-around">
+        <a
+          href="{{ route('users.edit') }}"
+          class="bg-primary-color hover:bg-h-card-color text-primary-text-color font-medium px-6 py-2 rounded-md"
+        >
+          Alterar conta
+        </a>
+        <form action="{{ route('users.destroy', {id: auth.user.id}) }}" method="POST">
+          <button
+            type="submit"
+            class="bg-primary-color hover:bg-h-card-color text-primary-text-color font-medium px-6 py-2 rounded-md"
+          >
+            Deletar conta
+        </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+@end

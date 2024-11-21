@@ -9,7 +9,7 @@ export default {
         'h-card-color': '#4b5563',
         'nav-color': '#0f172a',
         'card-border-color': '#1f2937',
-        'text-color': '#f3f4f6',
+        'primary-text-color': '#e5e7eb',
       },
     },
   },

@@ -4,12 +4,12 @@
       <!-- Cabeçalho do formulário -->
       <div class="text-primary-text-color rounded-t-lg text-center py-4">
         <h2 class="text-xl font-bold">
-          Criar Conta
+          Alterar Conta
         </h2>
       </div>
 
       <!-- Corpo do formulário -->
-      <form action="{{ route('users.store') }}" method="POST" class="p-6 space-y-4">
+      <form action="{{ route('users.update', {id: auth.user.id}) }}" method="POST" class="p-6 space-y-4">
         <!-- Campo de Nome de Usuário -->
         <div>
           <label for="full_name" class="block text-sm font-medium text-primary-text-color mb-1">Nome de Usuário</label>
@@ -54,7 +54,7 @@
           type="submit"
           class="w-full py-2 bg-h-card-color text-primary-text-color rounded hover:bg-pritext-primary-text-color hover:text-nav-color transition-colors font-semibold"
         >
-          Registrar
+          Atualizar
         </button>
       </form>
 
