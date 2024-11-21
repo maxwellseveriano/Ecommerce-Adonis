@@ -1,19 +1,23 @@
 <nav class="bg-nav-color px-4 flex justify-between items-center h-14 border-b border-slate-700">
-  <a href="{{ route('home.show') }}">
+  <a href="{{ route('home.show') }}" class="w-1/3">
     <img
       class="h-10"
       src="https://tacticalgearjunkie.com/cdn/shop/files/19474-chick-sticker-269095.png?v=1712030588"
     />
   </a>
-  <div class="text-white flex justify-between w-1/3">
+  <div class="text-primary-text-color flex justify-between w-1/3">
     <a href="{{ route('skins.index') }}">Skins</a>
     <a href="{{ route('cases.index') }}">Caixas</a>
     <a href="{{ route('stickers.index') }}">Adesivos</a>
   </div>
-  <div class="text-white">
-    @if(auth.isAuthenticated)
-    {{auth.user.name}} 
-    @!component('components/button', { href: 'auth.create', info: 'Login' })
+  <div class="text-primary-text-color flex items-center justify-end w-1/3">
+    @if(!auth.isAuthenticated)
+      @!component('components/button', { href: 'auth.create', info: 'Login', classe: 'w-24' })
+    @else
+      <p class="mr-2 truncate max-w-24">
+        {{ auth.user.fullName }}
+      </p>
+      @!component('components/button', { href: 'auth.destroy', info: 'Logout', classe: 'w-24' })
     @endif
   </div>
 </nav>

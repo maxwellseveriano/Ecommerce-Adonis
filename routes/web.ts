@@ -17,17 +17,16 @@ const sticker = await Sticker.first()
 router.on('/').render('pages/home/show', { skin, casei, sticker }).as('home.show')
 
 router.get('/login', [AuthController, 'create']).as('auth.create')
-
 router.post('/login', [AuthController, 'store']).as('auth.store')
 
 router.get('/skins', [SkinsController, 'index']).use(middleware.auth()).as('skins.index')
-router.get('/skins/:id', [SkinsController, 'show']).as('skins.show')
+router.get('/skins/:id', [SkinsController, 'show']).use(middleware.auth()).as('skins.show')
 
-router.get('/cases', [CasesController, 'index']).as('cases.index')
-router.get('/cases/:id', [CasesController, 'show']).as('cases.show')
+router.get('/cases', [CasesController, 'index']).use(middleware.auth()).as('cases.index')
+router.get('/cases/:id', [CasesController, 'show']).use(middleware.auth()).as('cases.show')
 
-router.get('/stickers', [StickersController, 'index']).as('stickers.index')
-router.get('/stickers/:id', [StickersController, 'show']).as('stickers.show')
+router.get('/stickers', [StickersController, 'index']).use(middleware.auth()).as('stickers.index')
+router.get('/stickers/:id', [StickersController, 'show']).use(middleware.auth()).as('stickers.show')
 
 //router.post('/register', [AuthController, 'register']);
 

@@ -1,13 +1,13 @@
 @if(!href)
   <button
-    class="{{ 'bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-8 rounded justify-self-end ' + classe || '' }}"
+    class="{{ 'bg-blue-500 hover:bg-blue-600 text-white text-center font-bold py-1 px-8 rounded justify-self-end ' + classe || '' }}"
   >
     Carrinho
 </button>
 @else
   <a
     href="{{ route(href) }}"
-    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded justify-self-end"
+    class="{{ 'bg-blue-500 hover:bg-blue-600 text-white text-center font-bold py-1 px-4 rounded justify-self-end ' + classe || '' }}"
   >
     {{ info }}
 </a>
