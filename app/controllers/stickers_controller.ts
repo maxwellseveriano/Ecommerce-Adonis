@@ -3,8 +3,16 @@ import type { HttpContext } from '@adonisjs/core/http'
 import Sticker from '#models/sticker'
 
 export default class StickersController {
-  async index({ view }: HttpContext) {
-    const stickers = await Sticker.all()
+  async index({ view, request }: HttpContext) {
+    const priceRange = request.only(['min', 'max'])
+    if (!priceRange.min && !priceRange.max) {
+      const stickers = await Sticker.all()
+      return view.render('pages/stickers/index', { stickers })
+    }
+    const stickers = await Sticker.query().whereBetween('price', [
+      priceRange.min || -1,
+      priceRange.max || Infinity,
+    ])
     return view.render('pages/stickers/index', { stickers })
   }
 

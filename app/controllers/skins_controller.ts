@@ -2,8 +2,16 @@ import Skin from '#models/skin'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class SkinsController {
-  async index({ view }: HttpContext) {
-    const skins = await Skin.all()
+  async index({ view, request }: HttpContext) {
+    const priceRange = request.only(['min', 'max'])
+    if (!priceRange.min && !priceRange.max) {
+      const skins = await Skin.all()
+      return view.render('pages/skins/index', { skins })
+    }
+    const skins = await Skin.query().whereBetween('price', [
+      priceRange.min || -1,
+      priceRange.max || Infinity,
+    ])
     return view.render('pages/skins/index', { skins })
   }
 
