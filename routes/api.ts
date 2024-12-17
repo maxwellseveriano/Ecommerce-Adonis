@@ -109,7 +109,7 @@ async function getApiPrices() {
     {
       method: 'GET',
       headers: {
-        'Accept-Encoding': 'gzip',
+        'Accept-Encoding': 'br',
       },
     }
   )

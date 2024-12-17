@@ -1,0 +1,30 @@
+<div class="text-primary-text-color">
+  <div class="flex justify-center text-2xl">
+    <span>Filtros</span>
+  </div>
+  @!component('components/filterseparator')
+  <form action="#">
+    <label for="price" class="ml-1">Preço</label>
+    <div class="flex justify-around">
+      <input
+        name="min"
+        type="number"
+        step="0.01"
+        placeholder="R$ 0.00"
+        class="mx-1 pl-1 w-20 bg-card-color rounded-sm [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+      />
+      <span>-</span>
+      <input
+        name="max"
+        type="number"
+        step="0.01"
+        placeholder="R$ 0.00"
+        class="ml-1 pl-1 w-20 bg-card-color rounded-sm [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+      />
+    </div>
+    @!component('components/filterseparator')
+    <div class="mt-2 flex justify-center">
+      @!component('components/button', {info: "Salvar" })
+    </div>
+  </form>
+</div>
