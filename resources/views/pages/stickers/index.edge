@@ -1,6 +1,9 @@
 @layouts.app()
-  <div class="bg-primary-color">
-    <div class="p-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5">
+  <div class="bg-primary-color flex">
+    <aside id="scroll" class="w-48">
+      @!component('components/filters/filterbar', {stickersFilter: true})
+    </aside>
+    <div class="p-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5 w-full overflow-y-auto">
       @each(sticker in stickers)
         <a href="{{ route('stickers.show', { id: sticker.id }) }}">
           @!component('components/card', { product: sticker })
@@ -9,3 +12,5 @@
     </div>
   </div>
 @end
+
+
