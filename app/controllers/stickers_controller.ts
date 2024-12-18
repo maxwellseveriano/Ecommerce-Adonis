@@ -4,9 +4,11 @@ import Sticker from '#models/sticker'
 
 export default class StickersController {
   async index({ view, request }: HttpContext) {
-    const priceRange = request.only(['min', 'max'])
-    if (!priceRange.min && !priceRange.max) {
-      const stickers = await Sticker.all()
+    const priceRange = request.only(['min', 'max', 'tipos'])
+    if (priceRange.tipos) {
+      const stickers = await Sticker.query()
+        .whereBetween('price', [priceRange.min || -1, priceRange.max || Infinity])
+        .whereIn('type', priceRange.tipos)
       return view.render('pages/stickers/index', { stickers })
     }
     const stickers = await Sticker.query().whereBetween('price', [

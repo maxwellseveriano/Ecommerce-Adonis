@@ -28,6 +28,16 @@
         @!component('components/filters/skinsfilter')
         @!component('components/filters/filterseparator')
       </div>
+    @elseif(casesFilter)
+      <div class="pl-1">
+        @!component('components/filters/casesfilter')
+        @!component('components/filters/filterseparator')
+      </div>
+    @elseif(stickersFilter)
+      <div class="pl-1">
+        @!component('components/filters/stickersfilter')
+        @!component('components/filters/filterseparator')
+      </div>
     @endif
     <div class="mt-2 flex justify-center">
       @!component('components/button', {info: "Salvar" })

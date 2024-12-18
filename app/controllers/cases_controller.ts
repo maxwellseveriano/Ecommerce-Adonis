@@ -4,9 +4,11 @@ import Case from '#models/case'
 
 export default class CasesController {
   async index({ view, request }: HttpContext) {
-    const priceRange = request.only(['min', 'max'])
-    if (!priceRange.min && !priceRange.max) {
-      const cases = await Case.all()
+    const priceRange = request.only(['min', 'max', 'tipos'])
+    if (priceRange.tipos) {
+      const cases = await Case.query()
+        .whereBetween('price', [priceRange.min || -1, priceRange.max || Infinity])
+        .whereIn('type', priceRange.tipos)
       return view.render('pages/cases/index', { cases })
     }
     const cases = await Case.query().whereBetween('price', [
