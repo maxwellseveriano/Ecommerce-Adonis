@@ -1,0 +1,48 @@
+@layouts.app()
+  <main class="bg-primary flex flex-col text-primary-text-color">
+    <div class="flex-1 container mx-auto p-4">
+      <section class="bg-card p-4 rounded-lg border border-card">
+        <h2 class="text-lg font-semibold text-primary border-b border-card pb-2 mb-4">
+          Seus Itens
+        </h2>
+        @each(item in cartItems)
+          <div class="flex items-center justify-between p-3 mb-3 bg-h-card rounded">
+            <input type="hidden" name="cart_id" value="{{ item.cart_id }}" />
+            <div class="flex items-center space-x-4">
+              <img src="{{ item.image_path }}" alt="Produto" style="height: 8rem;" class="h-" />
+              <div>
+                <p class="font-semibold text-primary">
+                  {{ item.name }}
+                </p>
+                <p class="text-sm text-gray-400">
+                  Quantidade: {{ item.quantity }}
+                </p>
+              </div>
+            </div>
+            <div>
+              <p class="font-bold text-primary">
+                R$ {{ item.subtotal.toFixed(2).replace('.', ',') }}
+              </p>
+              <button class="btn-remove text-red-500 hover:underline">Remover</button>
+            </div>
+          </div>
+        @end
+        
+        <div class="mt-6">
+          <div class="flex justify-between text-lg font-semibold text-primary">
+            <p>
+              Total:
+            </p>
+            <p id="totalCart">
+              R$ {{ total.toFixed(2).replace('.', ',') }}
+            </p>
+          </div>
+          <button class="mt-4 w-full bg-h-card py-2 text-center rounded hover:bg-card text-primary">
+            Finalizar Compra
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+@end

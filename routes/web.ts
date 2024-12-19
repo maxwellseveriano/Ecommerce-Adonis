@@ -9,6 +9,7 @@ const SkinsController = () => import('#controllers/skins_controller')
 const StickersController = () => import('#controllers/stickers_controller')
 const UsersController = () => import('#controllers/users_controller')
 const AuthController = () => import('#controllers/auth_controller')
+const CartsController = () => import('#controllers/carts_controller')
 
 const skin = await Skin.first()
 const casei = await Case.first()
@@ -47,3 +48,10 @@ router
   })
   .prefix('/user')
   .as('users')
+
+router.get('/cart', [CartsController, 'show']).use(middleware.auth()).as('cart.show')
+router.post('/cart', [CartsController, 'create']).use(middleware.auth()).as('cart.create')
+router
+  .delete('/cart/delete', [CartsController, 'destroy'])
+  .use(middleware.auth())
+  .as('cart.destroy')

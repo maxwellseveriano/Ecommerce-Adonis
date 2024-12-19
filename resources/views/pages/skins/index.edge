@@ -16,8 +16,10 @@
     <ul class="flex justify-center items-center space-x-4">
       <li>
         @if (skins.currentPage > skins.firstPage)
-          <a href="{{ request.completeUrl() }}?page={{ skins.currentPage - 1 }}" 
-             class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+          <a
+            href="{{ request.completeUrl() }}?page={{ skins.currentPage - 1 }}"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
             Anterior
           </a>
         @else
@@ -31,8 +33,10 @@
       </li>
       <li>
         @if (skins.currentPage < skins.lastPage)
-          <a href="{{ request.completeUrl() }}?page={{ skins.currentPage + 1 }}" 
-             class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+          <a
+            href="{{ request.completeUrl() }}?page={{ skins.currentPage + 1 }}"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
             Próxima
           </a>
         @else

@@ -11,15 +11,56 @@
     <a href="{{ route('stickers.index') }}">Adesivos</a>
   </div>
   <div class="text-primary-text-color flex items-center justify-end w-1/3">
+
     @if(!auth.isAuthenticated)
       @!component('components/button', { href: 'auth.create', info: 'Login', classe: 'w-24' })
     @else
-      <a href="{{ route('users.index') }}">
-        <p class="mr-2 truncate max-w-24">
-          {{ auth.user.username }}
-        </p>
-      </a>
-      @!component('components/button', { href: 'auth.destroy', info: 'Logout', classe: 'w-24' })
+      <div class="relative inline-block text-left">
+        <button
+          id="dropdownButton"
+          class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-primary-color rounded-md hover:bg-opacity-90"
+        >
+          <span>{{ auth.user.username }}</span>          <!-- Substitua por uma variável dinâmica -->
+          <svg
+            class="w-5 h-5 ml-2 -mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 9.707a1 1 0 011.414 0L10 13.414l3.293-3.707a1 1 0 011.414 0 .75.75 0 01-1.06 1.06L10 15.535l-4.647-4.768a.75.75 0 010-1.06z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdownMenu"
+          class="hidden absolute right-0 z-10 mt-2 w-48 bg-card-color rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
+        >
+          <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
+            <a
+              href="/cart"
+              class="block px-4 py-2 text-sm text-primary-text-color hover:bg-h-card-color"
+              role="menuitem"
+            >Carrinho</a>
+            <a
+              href="/logout"
+              class="block px-4 py-2 text-sm text-primary-text-color hover:bg-h-card-color"
+              role="menuitem"
+            >Logout</a>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById("dropdownButton").addEventListener("click", function() {
+          const menu = document.getElementById("dropdownMenu");
+          menu.classList.toggle("hidden"); // Alterna a visibilidade do menu
+        });
+      </script>
     @endif
   </div>
 </nav>
