@@ -11,5 +11,36 @@
       @end
     </div>
   </div>
+
+  <div class="pagination">
+    <ul class="flex justify-center items-center space-x-4">
+      <li>
+        @if (skins.currentPage > skins.firstPage)
+          <a href="{{ request.completeUrl() }}?page={{ skins.currentPage - 1 }}" 
+             class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Anterior
+          </a>
+        @else
+          <span class="px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed">Anterior</span>
+        @endif
+      </li>
+      <li>
+        <span class="text-white">
+          Página {{ skins.currentPage}} de {{ skins.lastPage }}
+        </span>
+      </li>
+      <li>
+        @if (skins.currentPage < skins.lastPage)
+          <a href="{{ request.completeUrl() }}?page={{ skins.currentPage + 1 }}" 
+             class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Próxima
+          </a>
+        @else
+          <span class="px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed">Próxima</span>
+        @endif
+      </li>
+    </ul>
+  </div>
+
 @end
 
