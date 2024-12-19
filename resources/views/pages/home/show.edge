@@ -1,5 +1,23 @@
 @layouts.app()
-  <div class="h-full text-3xl font-mono bg-primary-color">
+<div class="relative bg-primary-color py-10 text-center">
+    <!-- Imagens das Armas -->
+    <div class="absolute top-20 inset-0 flex justify-between items-center px-10 opacity-65">
+      <img src="https://www.seekpng.com/png/full/145-1458074_awp-png.png" alt="AWP" class="h-32 -rotate-12 trasnform scale-x-[-1]">
+      <img src="https://www.seekpng.com/png/full/145-1458074_awp-png.png" alt="AWP" class="h-32 rotate-12">
+    </div>
+    <!-- Título Principal -->
+    <div class="relative text-6xl font-extrabold text-white">
+      <span class="block text-yellow-300">
+        Chicken-Skins
+      </span>
+      <span class="block mt-2 text-white-300 text-2xl tracking-widest graffiti-font">
+        Loja de Skins do CS2
+      </span>
+    </div>
+  </div>
+
+
+  <div class=" text-3xl font-mono bg-primary-color">
     <section class="font-bold font-mono px-36 text-gray-200 flex justify-around translate-y-1/2 text-center">
       <a href="{{ route('skins.index') }}">
         <div
