@@ -7,7 +7,7 @@
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 
   </head>
-  <body class="h-screen">
+  <body class="h-screen bg-primary-color">
     <section class="h-full flex flex-col antialiased bg-primary-color">
       @include('components/layouts/partials/header')
 
@@ -15,6 +15,8 @@
         {{{ await $slots.main() }}}
       </div>
     </section>
-    <script href="P:\output\WEB\Chicken-Skins\resources\js\paginacao.js"></script>
+    <script href="P:\output\WEB\Chicken-Skins\resources\js\paginacao.js">
+      
+    </script>
   </body>
 </html>
