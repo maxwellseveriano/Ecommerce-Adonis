@@ -40,7 +40,7 @@ router
     router
       .group(() => {
         router.get('profile', [UsersController, 'index']).as('index')
-        router.get('update', [UsersController, 'edit']).as('edit')
+        router.get('/update', [UsersController, 'edit']).as('edit')
         router.post('update/:id', [UsersController, 'update']).as('update')
         router.post('delete/:id', [UsersController, 'destroy']).as('destroy')
       })
