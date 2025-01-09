@@ -1,6 +1,6 @@
 # Chicken Skins
 
-Uma aplicação que permite aos usuários explorar e personalizar skins para galinhas em jogos compatíveis.
+Um site e-commerce que permite aos usuários explorar e visualizar os preços, modelo, personalização e descrição de skins do CS2 (Counter-Strike 2).
 
 ---
 
@@ -8,9 +8,6 @@ Uma aplicação que permite aos usuários explorar e personalizar skins para gal
 
 <ul>
   <li>Implementar novos designs de skins</li>
-  <li>Adicionar suporte para mais jogos</li>
-  <li>Melhorar a interface do usuário</li>
-  <li>Corrigir bugs conhecidos</li>
 </ul>
 
 ---
