@@ -4,6 +4,22 @@ Um site e-commerce que permite aos usuários explorar e visualizar os preços, m
 
 ---
 
+## 🛠️ Linguagens Utilizadas
+
+<ul>
+  <li> Typescript</li>
+  <li> Javascript</li>
+  <li> HTML</li>
+  <li> CSS</li>
+</ul>
+
+## 🛠️ Framweroks Utilizados
+<ul>
+  <li> AdonisJS (Framework Full-Stack) </li>
+  <li> Tailwind CSS </li>
+</ul>
+
+
 ## 🚀 Ajustes e melhorias
 
 <ul>
