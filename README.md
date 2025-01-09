@@ -1,106 +1,125 @@
-# Chicken-Skins
+# Chicken Skins
 
-## Índice
+Uma aplicação que permite aos usuários explorar e personalizar skins para galinhas em jogos compatíveis.
 
-- [Descrição](#descrição)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Instalação](#instalação)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Autor](#autor)
+---
 
-## Descrição
+## 🚀 Ajustes e melhorias
 
-O **Chicken-Skins** é um projeto pessoal/acadêmico de desenvolvimento FullStack de um e-commerce, com o objetivo de fornecer uma plataforma para a venda de produtos online.
+<ul>
+  <li>Implementar novos designs de skins</li>
+  <li>Adicionar suporte para mais jogos</li>
+  <li>Melhorar a interface do usuário</li>
+  <li>Corrigir bugs conhecidos</li>
+</ul>
 
-## Funcionalidades
+---
 
-- Cadastro e autenticação de usuários
-- Gerenciamento e descrição de produtos
-- Carrinho de compras
+## 🛠️ Pré-requisitos
 
-## Tecnologias Utilizadas
+<ul>
+  <li><strong>Node.js</strong> v14 ou superior</li>
+  <li><strong>NPM</strong> v6 ou superior</li>
+  <li><strong>Git</strong> instalado na máquina</li>
+</ul>
 
-- **Linguagens**
-  - HTML5, CSS3, JavaScript, Typescript
-  - Frameworks/Libraries: Tailwind CSS
-  - Framework: AdonisJS
-- **Banco de Dados:**
-  - SQLite 
+---
 
-## Instalação
+## 📥 Instalação
 
-1. **Clone o repositório:**
+<ol>
+  <li>
+    <strong>Clone o repositório:</strong>
+    <pre>
+      <code>git clone https://github.com/Davi-Cardos/Chicken-Skins.git</code>
+    </pre>
+  </li>
+  <li>
+    <strong>Navegue até o diretório do projeto:</strong>
+    <pre>
+      <code>cd Chicken-Skins</code>
+    </pre>
+  </li>
+  <li>
+    <strong>Instale as dependências:</strong>
+    <pre>
+      <code>npm install</code>
+    </pre>
+  </li>
+</ol>
 
-   ```bash
-   git clone https://github.com/Davi-Cardos/Chicken-Skins.git
-<br>2. **Navegue até o diretório do projeto:**
+---
 
-bash
-Copiar código
-cd Chicken-Skins
-Instale as dependências:
+## 🚀 Uso
 
-bash
-Copiar código
-npm install
-Configure as variáveis de ambiente:
+<ol>
+  <li>
+    <strong>Inicie a aplicação:</strong>
+    <pre>
+      <code>npm start</code>
+    </pre>
+  </li>
+  <li>
+    <strong>Acesse no navegador:</strong>
+    <pre>
+      <code>http://localhost:3000</code>
+    </pre>
+  </li>
+  <li>
+    <strong>Explore e personalize:</strong>
+    <ul>
+      <li>Navegue pelas skins disponíveis</li>
+      <li>Selecione uma skin para visualizar detalhes</li>
+      <li>Personalize conforme suas preferências</li>
+    </ul>
+  </li>
+</ol>
 
-Renomeie o arquivo .env.example para .env e ajuste as configurações conforme necessário.
-Execute as migrações do banco de dados:
+---
 
-bash
-Copiar código
-node ace migration:run
-Inicie o servidor de desenvolvimento:
+## 🤝 Contribuindo para Chicken Skins
 
-bash
-Copiar código
-npm run dev
-O aplicativo estará disponível em http://localhost:3333.
-Uso
-Acesse a aplicação através do navegador em http://localhost:3333.
-Utilize o painel de administração para gerenciar produtos e pedidos.
-Os usuários podem se cadastrar, adicionar produtos ao carrinho e finalizar compras. <br><br>
+<ol>
+  <li>
+    Faça um fork do projeto:
+    <pre>
+      <code>git fork https://github.com/Davi-Cardos/Chicken-Skins.git</code>
+    </pre>
+  </li>
+  <li>
+    Crie uma branch para sua feature:
+    <pre>
+      <code>git checkout -b minha-feature</code>
+    </pre>
+  </li>
+  <li>
+    Implemente suas alterações e faça commit:
+    <pre>
+      <code>git commit -m 'Adiciona nova feature'</code>
+    </pre>
+  </li>
+  <li>
+    Envie para o GitHub:
+    <pre>
+      <code>git push origin minha-feature</code>
+    </pre>
+  </li>
+  <li>
+    Abra um Pull Request no repositório original.
+  </li>
+</ol>
 
-## Contribuição:
-Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
+---
 
-Fork o repositório.
+## 📝 Licença
 
-Crie uma nova branch:
+<p>Este projeto está licenciado sob a <strong>Licença MIT</strong>.</p>
 
-bash
-Copiar código
-git checkout -b minha-feature
-Faça suas alterações e commit:
+---
 
-bash
-Copiar código
-git commit -m 'Adiciona nova funcionalidade'
-Envie para o repositório remoto:
+## 📞 Contato
 
-bash
-Copiar código
-git push origin minha-feature
-Abra um Pull Request.
-
-## Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes. <br><br><br>
-
-## Autores
-Davi Cardoso e Maxwell William
-
-GitHub: https://github.com/Davi-Cardos <br>
-LinkedIn: https://www.linkedin.com/in/davi-cardoso-874417331/
-
-
-
- 
-
-
-
-
-
+<ul>
+  <li><strong>Autor:</strong> Davi Cardoso de Olivera e Maxwell William </li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/Davi-Cardos" target="_blank">Davi-Cardos</a></li>
+</ul>
